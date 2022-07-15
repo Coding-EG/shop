@@ -148,7 +148,7 @@ header{
 #ads-container{
     position: relative;
     width: calc(100% - 25px);
-    height:0px;
+    height:calc(100vh - 140px);
     /* background-color: red; */
     margin: 12.5px;
     z-index: -1;
@@ -275,4 +275,19 @@ header{
 .product-plus-button,.product-minus-button{
     cursor: pointer;
     font-weight: bolder;
+}
+/* media query for responsive design */
+@media screen and (max-width:487px) {
+    #header-name{
+        font-size: 25px;
+    }
+
+}
+
+/* media query for orientation portrait */
+@media screen and (orientation:portrait) and (max-width:667px) {
+    #ads-container{
+        height: calc(100vh - 50vh);
+    }
+    
 }

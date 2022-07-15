@@ -179,6 +179,21 @@ header{
     height: 120px;
     /* background-color: black; */
     border-bottom: 2px solid rgb(0, 0, 0);
+    animation:remove 1s linear paused;
+}
+@keyframes remove{
+    0%{
+        opacity: 1;
+        height: 120px;
+    }
+    75%{
+        opacity: 0;
+        height: 120px;
+    }
+    100%{
+        opacity: 0;
+        height: 0px;
+    }
 }
 .item-remove,.item-quantity-container{
     font-size: 30px;
@@ -222,4 +237,27 @@ header{
 .item-price{
     font-size: 20px;
     font-weight: bold;
+    background-color: black;
+    color:white;
+    border-radius: 3px;
+    padding: 5px;
+}
+/* mdia query for mobiles */
+@media screen and (max-width:487px) {
+    #header-name{
+        font-size: 25px;
+    }
+    #product-section {
+        position: relative;
+        max-height: 448px;
+        width: 98vw;
+        margin-top: 20px;
+        margin-left: 1vw;
+        border: 2px solid black;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 3px 3px 4px black;
+        overflow: auto;
+    }
+
 }

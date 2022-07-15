@@ -43,7 +43,7 @@ let adsSlider = () =>{
       }else{index++}
       // console.log(index);
    };
-   document.getElementById("ads-container").style.height = "calc(100vh - 140px)";
+   // document.getElementById("ads-container").style.height = "calc(100vh - 140px)";
    slide();
    setInterval(slide,4000);
 };

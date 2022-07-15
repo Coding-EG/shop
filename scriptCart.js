@@ -106,10 +106,13 @@ function itemsDecreasement(id) {
     
    }
    else if (searchData.item <=1) {
-    document.getElementById(`item-container-${selectedItem}`).remove();
+    document.getElementById(`${selectedItem}`).innerText = "0";
+    document.getElementById(`item-container-${selectedItem}`).style.animationPlayState = "running";
+    document.getElementById(`item-container-${selectedItem}`).addEventListener("animationend",() => {document.getElementById(`item-container-${selectedItem}`).remove();
     yourData = yourData.filter((x) => x.id !== selectedItem);
     localStorage.setItem("yourData",JSON.stringify(yourData));
-    cartItemQuantity(); 
+    cartItemQuantity();
+   }); 
    }
   
   
@@ -117,10 +120,12 @@ function itemsDecreasement(id) {
 
 function removeItem(id) {
   let selectedItem = id;
-  document.getElementById(`item-container-${id}`).remove();
+  document.querySelector(`#item-container-${id}`).style.animationPlayState = "running";
+  document.getElementById(`item-container-${id}`).addEventListener("animationend",() => {document.getElementById(`item-container-${id}`).remove();
   yourData = yourData.filter((x) => x.id !== selectedItem);
   localStorage.setItem("yourData",JSON.stringify(yourData));
   cartItemQuantity();
+});
 
 }
 
