@@ -279,7 +279,7 @@ header{
 /* media query for responsive design */
 @media screen and (max-width:487px) {
     #header-name{
-        font-size: 25px;
+        font-size: 22px;
     }
 
 }
@@ -289,5 +289,6 @@ header{
     #ads-container{
         height: calc(100vh - 50vh);
     }
+   
     
 }

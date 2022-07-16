@@ -248,16 +248,17 @@ header{
         font-size: 22px;
     }
     #product-section {
-        position: relative;
         max-height: 448px;
         width: 98vw;
         margin-top: 20px;
         margin-left: 1vw;
-        border: 2px solid black;
-        border-radius: 10px;
-        background-color: rgb(255, 255, 255);
-        box-shadow: 3px 3px 4px black;
-        overflow: auto;
+    }
+    .item-quantity-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        gap:0px;
+        align-items: center;
     }
 
 }
