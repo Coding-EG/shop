@@ -245,7 +245,7 @@ header{
 /* mdia query for mobiles */
 @media screen and (max-width:487px) {
     #header-name{
-        font-size: 25px;
+        font-size: 22px;
     }
     #product-section {
         position: relative;
