@@ -16,7 +16,7 @@ let getProduct = () => {
        productSection.innerHTML+=`<div id="product-container-${id}"class="product-container"><div id="product-img-${id}-container"class="product-img-container"><img src="${link}"alt="${name}"class="product-img"></div>
        <p id="product-name-${id}"class="product-name">${name}</p>
        <p class="product-desc">${desc}</p><div class="product-price-container">
-<p class="product-price">$ ${price}</p><div class="product-quantity-container"><i class="product-minus-button"onclick="itemsDecreasement('${id}')">&minus;</i>
+<p class="product-price">&#8377; ${price}</p><div class="product-quantity-container"><i class="product-minus-button"onclick="itemsDecreasement('${id}')">&minus;</i>
        <span id="${id}"class="product-quantity">${searchData === undefined ? 0 : searchData.item}</span>
        <i class="product-plus-button"onclick="itemsIncreasement('${id}')">&plus;</i>
        </div>

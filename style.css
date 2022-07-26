@@ -265,6 +265,7 @@ body::-webkit-scrollbar,#product-section::-webkit-scrollbar{
 .product-price{
     font-size: x-large;
     margin-left:15px;
+    font-weight: 900;
 }
 .product-quantity-container{
     display: flex;

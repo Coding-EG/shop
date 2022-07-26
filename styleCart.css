@@ -249,6 +249,7 @@ header{
     color:white;
     border-radius: 3px;
     padding: 5px;
+    font-family:'emoji','Times New Roman', 'Times', 'serif','monospace';
 }
 /* mdia query for mobiles */
 @media screen and (max-width:487px) {

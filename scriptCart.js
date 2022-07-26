@@ -54,7 +54,7 @@ function navToggleFunction() {
    productSection.innerHTML += `<div class="item-container"id="item-container-${id}"><span class="item-remove"onclick="removeItem('${id}')">x</span><img class="item-img"alt="${name}"src="${link}"><div class="item-detail"><p class="item-name">${name}</p><p class ="item-desc">${desc}</p></div><div class="item-quantity-container"><i class="item-minus-button"onclick="itemsDecreasement('${id}')">&minus;</i>
    <span id="${id}"class="item-quantity">${x === undefined ? 0 : x.item}</span>
    <i class="item-plus-button"onclick="itemsIncreasement('${id}')">&plus;</i>
-   </div><p class="item-price"id="item-price-${id}">$ ${price*x.item}</p></div>`;
+   </div><p class="item-price"id="item-price-${id}">&#8377; ${price*x.item}</p></div>`;
 
   })
   
