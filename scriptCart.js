@@ -1,10 +1,11 @@
 let yourData = JSON.parse(localStorage.getItem("yourData")) || [];
 let productData;
+let productSection = document.getElementById("product-section");
 
 window.onload = () => {document.body.style.display = "block";
 fetch("data.json").then(x => x.json()).then(x => {productData = x;
   cartItems();
-  cartItemTotals();
+  // cartItemTotals();
 });
 };
 function navToggleFunction() {
@@ -36,28 +37,23 @@ function navToggleFunction() {
     window.addEventListener("resize",navToggleFunction);
  };
  navToggleFunction();
- 
-//  function cartItemQuantity() {
-//     let cartItem = document.getElementById("header-cart-num");
-//    cartItem.innerText = yourData.map((x) => x.item).reduce((x, y) => x + y, 0);
-//  };
-//  cartItemQuantity(); 
 
  function cartItems() {
-  let productSection = document.getElementById("product-section");
+  // let productSection = document.getElementById("product-section");
   productSection.innerHTML = "";
-  console.log(productData);
-  if (yourData.length == 0) {
-    productSection.innerHTML =`<h1 class="empty-cart-heading">Your Cart Is Empty</h1>`;
-  }
-  console.log(yourData);
+  emptyCart();
+  // console.log(productData);
+  // if (yourData.length == 0) {
+  //   productSection.innerHTML =`<h1 class="empty-cart-heading">Your Cart Is Empty</h1>`;
+  // }
+  // console.log(yourData);
   yourData.map(x => {
     let searchData = productData.find((y) => x.id === y.id);
     // let searchItemData = yourData.find((x) => x.id === y.id);
    let {id,link,name,desc,price} = searchData;
-   productSection.innerHTML += `<div class="item-container"id="item-container-${id}"><span class="item-remove"onclick="removeItem(${id})">x</span><img class="item-img"alt="${name}"src="${link}"><div class="item-detail"><p class="item-name">${name}</p><br><p class ="item-desc">${desc}</p></div><div class="item-quantity-container"><i class="item-minus-button"onclick="itemsDecreasement(${id})">&minus;</i>
+   productSection.innerHTML += `<div class="item-container"id="item-container-${id}"><span class="item-remove"onclick="removeItem('${id}')">x</span><img class="item-img"alt="${name}"src="${link}"><div class="item-detail"><p class="item-name">${name}</p><p class ="item-desc">${desc}</p></div><div class="item-quantity-container"><i class="item-minus-button"onclick="itemsDecreasement('${id}')">&minus;</i>
    <span id="${id}"class="item-quantity">${x === undefined ? 0 : x.item}</span>
-   <i class="item-plus-button"onclick="itemsIncreasement(${id})">&plus;</i>
+   <i class="item-plus-button"onclick="itemsIncreasement('${id}')">&plus;</i>
    </div><p class="item-price"id="item-price-${id}">$ ${price*x.item}</p></div>`;
 
   })
@@ -116,6 +112,7 @@ function itemsDecreasement(id) {
     yourData = yourData.filter((x) => x.id !== selectedItem);
     localStorage.setItem("yourData",JSON.stringify(yourData));
     cartItemQuantity();
+    emptyCart();
    }); 
    }
   
@@ -129,6 +126,7 @@ function removeItem(id) {
   yourData = yourData.filter((x) => x.id !== selectedItem);
   localStorage.setItem("yourData",JSON.stringify(yourData));
   cartItemQuantity();
+  emptyCart();
 });
 
 }
@@ -143,7 +141,16 @@ function cartItemQuantity() {
  cartItem.innerText = yourData.map((x) => x.item).reduce((x, y) => x + y, 0);
 };
 cartItemQuantity();
+// dettect empty cart
+function emptyCart() {
+  let itemNumber = yourData.map((x) => x.item).reduce((x, y) => x + y, 0);
+  if (itemNumber === 0 || itemNumber === undefined) {
+    productSection.innerHTML =`<h1 class="empty-item-container-heading">Your Cart Is Empty</h1>`;
 
+  }
+
+}
+// experimental line start from
 function cartItemTotals() {
   let cartTotal = document.querySelectorAll(".item-price");
   let cartTotals = [];
