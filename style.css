@@ -133,6 +133,9 @@ header{
 }
 #nav-toggle{
     position: absolute;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: 40px;
     height: 40px;
     /* background-color: red; */
@@ -330,7 +333,7 @@ body::-webkit-scrollbar,#product-section::-webkit-scrollbar{
 /* media query for responsive design */
 @media screen and (max-width:487px) {
     #header-name{
-        font-size:6.8vw;
+        font-size:6.5vw;
     }
 
 }
