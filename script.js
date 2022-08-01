@@ -56,7 +56,7 @@ function navToggleFunction() {
    let navHref = document.querySelectorAll(".nav-target");
    let navToggle = document.getElementById("nav-toggle");
        if(window.innerWidth<=575) {
-        navToggle.style.display = "inline";
+        navToggle.style.display = "flex";
         navToggle.onclick = () => {
            navLi.forEach((x)=> {
              x.classList.toggle("nav-li-toggle");

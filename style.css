@@ -132,17 +132,18 @@ header{
     
 }
 #nav-toggle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top:0px;
     width: 40px;
     height: 40px;
-    /* padding-top: 5px; */
     background-color: rgba(50, 76, 136, 0.821);
     color:white;
     right: 25px;
     z-index: 1;
     font-size: 30px;
-    text-align: center;
     cursor: pointer;
 }
 #nav-toggle:hover{
