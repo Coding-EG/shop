@@ -51,7 +51,7 @@ function navToggleFunction() {
     let searchData = productData.find((y) => x.id === y.id);
     // let searchItemData = yourData.find((x) => x.id === y.id);
    let {id,link,name,desc,price} = searchData;
-   productSection.innerHTML += `<div class="item-container"id="item-container-${id}"><span class="item-remove"onclick="removeItem('${id}')">x</span><img class="item-img"alt="${name}"src="${link}"><div class="item-detail"><p class="item-name">${name}</p><p class ="item-desc">${desc}</p></div><div class="item-quantity-container"><i class="item-minus-button"onclick="itemsDecreasement('${id}')">&minus;</i>
+   productSection.innerHTML += `<div class="item-container"id="item-container-${id}"><span class="item-remove"onclick="removeItem('${id}')">&times;</span><img class="item-img"alt="${name}"src="${link}"><div class="item-detail"><p class="item-name">${name}</p><p class ="item-desc">${desc}</p></div><div class="item-quantity-container"><i class="item-minus-button"onclick="itemsDecreasement('${id}')">&minus;</i>
    <span id="${id}"class="item-quantity">${x === undefined ? 0 : x.item}</span>
    <i class="item-plus-button"onclick="itemsIncreasement('${id}')">&plus;</i>
    </div><p class="item-price"id="item-price-${id}">&#8377; ${price*x.item}</p></div>`;
@@ -166,4 +166,5 @@ function cartItemTotals() {
   let total = cartTotals.reduce((x,y) => x+y,0);
   document.getElementById("total-amount").innerHTML = `&#8377; ${total}`;
 };
+
  
